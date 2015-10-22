@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1445488573 source:/home/taylor/cs/a.cpp/main.cpp
+	<iostream>
+	<cstdlib>
+
