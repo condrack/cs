@@ -147,6 +147,7 @@ void tree::removenode(node* ptr, node* match,bool left)
             del=match;
             left == true? ptr->left=NULL:ptr->right=NULL;
             delete del;
+            cout<<"node has been removed"<<endl;
         }
 //this statement runs if node has right child
         else if(match->left ==NULL && match->right!= NULL)
@@ -155,6 +156,7 @@ void tree::removenode(node* ptr, node* match,bool left)
             match->right=NULL;
             del=match;
             delete del;
+            cout<<"node has been removed"<<endl;
         }
 //statement runs if node has left child
         else if(match->left !=NULL && match->right== NULL)
@@ -163,6 +165,7 @@ void tree::removenode(node* ptr, node* match,bool left)
             match->left=NULL;
             del=match;
             delete del;
+            cout<<"node has been removed"<<endl;
         }
 //statement runs if node has two children
         else
@@ -170,6 +173,7 @@ void tree::removenode(node* ptr, node* match,bool left)
             largest = treemax(match->right);
             deletenode(match,largest);
             match->data = largest;
+            cout<<"node has been removed"<<endl;
         }
 
     }
@@ -193,19 +197,8 @@ int main()
     branch.startnode(31);
     branch.startnode(34);
 
-    cout<<"The original tree in ascending order-"<<endl;
     branch.printnode();
-    cout<<endl;
-    cout<<"Deleting node with value 12. Resulting tree -"<<endl;
     branch.deletebegin(12);
-    branch.printnode();
-    cout<<endl;
-    cout<<"Deleting node with value 30. Resulting tree -"<<endl;
-    branch.deletebegin(30);
-    branch.printnode();
-    cout<<endl;
-    cout<<"Deleting node with value 25. Resulting tree -"<<endl;
-    branch.deletebegin(25);
     branch.printnode();
 
     return 0;
